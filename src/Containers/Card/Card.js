@@ -5,6 +5,7 @@ import Image from "../../Components/Image/Image";
 import "./Card.css";
 
 const Card = (props) => {
+
     return (
         <section className="Card">
             <Quote quote={props.data.quote} character={props.data.character} />

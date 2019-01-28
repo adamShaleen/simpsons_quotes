@@ -6,9 +6,10 @@
 .btn {
     font-family: "Simpsonfont";
     cursor: pointer;
-    color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    color: #007bff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #007bff;
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -18,11 +19,13 @@
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+    transition: color .10s ease-in-out,background-color .10s ease-in-out,border-color .10s ease-in-out,box-shadow .10s ease-in-out; 
 }
 
 .btn:focus, .btn:hover {
     text-decoration: none;
+    color: white;
+    background-color: #007bff;
 }
 
 button, select {
