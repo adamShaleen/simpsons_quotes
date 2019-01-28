@@ -1,9 +1,10 @@
 import React from "react";
+import "./Image.css";
 
-const Image = () => {
+const Image = (props) => {
     return (
-        <section>
-            <img alt="fuck" className="Image" src="https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FNelsonMuntz.png?1497567511185" />
+        <section className="Image">
+            <img alt={props.image} className="Image" src={props.image} />
         </section>
     )
 }

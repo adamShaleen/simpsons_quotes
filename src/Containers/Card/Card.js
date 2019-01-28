@@ -1,16 +1,15 @@
 import React from "react";
+import Button from "../../Components/Button/Button";
 import Quote from "../../Components/Quote/Quote";
-import Name from "../../Components/Name/Name";
 import Image from "../../Components/Image/Image";
 import "./Card.css";
 
-const Card = () => {
+const Card = (props) => {
     return (
         <section className="Card">
-            <Quote />
-            <br />
-            <Name />
-            <Image />
+            <Quote quote={props.data.quote} character={props.data.character} />
+            <Image image={props.data.image}/>
+            <Button onClick={props.onClick}/>
         </section>
     )
 }

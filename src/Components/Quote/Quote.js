@@ -1,10 +1,11 @@
 import React from "react";
 import "./Quote.css";
 
-const Quote = () => {
+const Quote = (props) => {
     return (
         <section className="Quote">
-            <h1>"This is a simpsons quote. It doesn't matter from who because there's a picture of Nelson anyway.  Tiddly dee."</h1>
+            <h1>"{props.quote}"</h1>
+            <h3>- {props.character}</h3>
         </section>
     )
 }

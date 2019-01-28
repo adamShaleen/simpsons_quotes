@@ -1,0 +1,30 @@
+.Button {
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.btn {
+    font-family: "Simpsonfont";
+    cursor: pointer;
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+}
+
+.btn:focus, .btn:hover {
+    text-decoration: none;
+}
+
+button, select {
+    text-transform: none;
+}

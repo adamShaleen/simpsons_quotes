@@ -1,16 +1,67 @@
 import React, { Component } from "react";
 import './App.css';
+import Error from "./Components/Error/Error";
 import Header from "./Containers/Header/Header";
 import Card from "./Containers/Card/Card"
 import Footer from "./Containers/Footer/Footer";
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      quote: "",
+      character: "",
+      imageUrl: "",
+      error: false,
+      errorText: ""
+    }
+
+    this.fetchData = this.fetchData.bind(this);
+    this.updateData = this.updateData.bind(this);
+  }
+
+  async fetchData() {
+    const response = await fetch("https://thesimpsonsquoteapi.glitch.me/quotes");
+
+    if (response.ok) {
+        return await response.json();
+    } 
+
+    this.setState({
+      error: true,
+      errorText: response.statusText
+    })
+    
+    throw new Error(`There was an error with the request: ${this.errorText}`);
+  }
+  
+  async updateData() {
+    const data = await this.fetchData();
+    
+    this.setState({
+      quote: data[0].quote,
+      character: data[0].character,
+      image: data[0].image,
+      error: false,
+      errorText: ""
+    })
+  }
+  
+  async componentWillMount() {
+    this.updateData();
+  }
+
   render() {
     return (
       <section className="App">
         <Header/>
-        <Card/>
+        {this.state.error ? 
+          <Error errorText={this.state.errorText}/> 
+          : 
+          <Card onClick={this.updateData} data={this.state}/>
+        }
         <Footer/>
       </section>
     );
