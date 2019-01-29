@@ -3,7 +3,6 @@ import './App.css';
 import Error from "./Components/Error/Error";
 import Header from "./Containers/Header/Header";
 import Card from "./Containers/Card/Card"
-import Footer from "./Containers/Footer/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -49,7 +48,12 @@ class App extends Component {
   }
   
   async componentWillMount() {
+    console.log("Component will mount")
     this.updateData();
+  }
+
+  componentDidMount() {
+    console.log("Component mounted")
   }
 
   render() {
@@ -61,7 +65,6 @@ class App extends Component {
           : 
           <Card onClick={this.updateData} data={this.state}/>
         }
-        <Footer/>
       </section>
     );
   }
